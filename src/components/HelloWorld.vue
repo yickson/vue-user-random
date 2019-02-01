@@ -20,6 +20,7 @@ export default {
   methods: {
     fetchUsers: function () {
       let number = Math.round(Math.random()*10); //Número aleatorio
+      if(number == 0) number + 1;
       const baseURI = `https://jsonplaceholder.typicode.com/users/${ number }` //Api de usuarios
       this.$http.get(baseURI)
       .then((result) => {
